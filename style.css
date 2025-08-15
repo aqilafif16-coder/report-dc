@@ -1,29 +1,50 @@
+/* Style untuk body */
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background: #f4f4f4';
+    background: linear-gradient(to bottom, #ffffff, #e6f0ff);
+    margin: 0;
 }
+
+/* Judul halaman */
 h1 {
     text-align: center;
+    color: #004a99;
+    margin-bottom: 30px;
 }
+
+/* Tabel */
 table {
     width: 100%;
     border-collapse: collapse;
     background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
+
 th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #004a99;
+    color: white;
     text-align: left;
 }
-th {
-    background: #333;
-    color: white;
+
+tr:hover {
+    background-color: #f2f8ff;
 }
+
+/* Link */
 a {
-    color: blue;
+    color: #007bff;
     text-decoration: none;
+    font-weight: bold;
 }
+
 a:hover {
     text-decoration: underline;
 }
