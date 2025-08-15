@@ -1,71 +1,111 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Laporan</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report DC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #e6f0ff, #ffffff);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-    <!-- Font Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    .container {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .card {
+      background: rgba(240, 240, 240, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.6s ease forwards;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .dropdown-content {
+      display: none;
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.6);
+      margin-bottom: 6px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #0077cc;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(0, 119, 204, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <h1>📊 Daftar Link Report RDC SDC</h1>
 
-    <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1vLJ1N3k1XqmGKVysf-rq5_72M6cTHlGtjDeGUAkohXM/edit?gid=0#gid=0')">
-        Senin - Used Budget ADF
+<div class="container">
+  <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1pBdgD1KOdBNk73Tkl8NjXD_u4qijEwP29x5AJCAKcpU/edit?gid=1130676385#gid=1130676385', '_blank')">
+    <h3>Summary Analyst</h3>
+  </div>
+
+  <div class="card" onclick="toggleDropdown('armadaDropdown')">
+    <h3>Report Armada by Monitoring LC</h3>
+    <div id="armadaDropdown" class="dropdown-content">
+      <a href="https://docs.google.com/spreadsheets/d/1Nj1PBjen8i_h78pU5_TuobswUU2GpgIuaXo0GQqdmQw/edit?gid=1130676385#gid=1130676385" target="_blank">Banjarmasin</a>
+      <a href="https://docs.google.com/spreadsheets/d/1AjoxlOALeTMT_8ilG82dkrJ3fWYwPiqy6pFV9xZIEyg/edit?gid=1130676385#gid=1130676385" target="_blank">Batam</a>
+      <a href="https://docs.google.com/spreadsheets/d/1h6VSb0230dvxaRdpIDugLih-EUdQV2OuiwU9U2pCocw/edit?gid=1130676385#gid=1130676385" target="_blank">Nagoya</a>
+      <a href="https://docs.google.com/spreadsheets/d/1PDTpu5YLNX_59AkefbrWsrbGx5SPrQ1LMwg2PvkaCXA/edit?gid=1130676385#gid=1130676385" target="_blank">Samarinda</a>
+      <a href="https://docs.google.com/spreadsheets/d/1Bsg5Isl6V5Eub4dFRoqh2EzLueoBCfL-ntDsNuZ2FO0/edit?gid=1130676385#gid=1130676385" target="_blank">Manado</a>
+      <a href="https://docs.google.com/spreadsheets/d/1VxHmgmaEeEiAIAHx3KtEIsmdAvfXbT1fDUaV1g-d2MU/edit?gid=1130676385#gid=1130676385" target="_blank">Maluku</a>
+      <a href="https://docs.google.com/spreadsheets/d/15eyksWat5T1GGVZRLiI66OG_axwSq66ncOuLiESF5wM/edit?gid=1130676385#gid=1130676385" target="_blank">Kendari</a>
+      <a href="https://docs.google.com/spreadsheets/d/14ayl_Aiu1-au-HQoap6XqUNMY_5hBlsWbdgxAaf33f0/edit?usp=drive_link" target="_blank">Pangkal Pinang</a>
+      <a href="https://docs.google.com/spreadsheets/d/1tFvun3uUDPoZ_J9RireCYY5-galThSMsBW3SMB98MHE/edit?usp=drive_link" target="_blank">Pontianak</a>
+      <a href="https://docs.google.com/spreadsheets/d/1-I84eh9PK5Ir1p1jxeIhrVe470Cgm1Em1bZs0C838fo/edit?gid=1130676385#gid=1130676385" target="_blank">Ternate</a>
+      <a href="https://docs.google.com/spreadsheets/d/1gJZZfsLVa0Gzn_7pgaiz9Gjf3XlB8fWqFYR0WInA_Fo/edit?gid=1130676385#gid=1130676385" target="_blank">Tarakan</a>
+      <a href="https://docs.google.com/spreadsheets/d/1VSHabznwao8SHjrazvKZv_M4WILRdwQUn2rbe-J1VnI/edit?gid=1130676385#gid=1130676385" target="_blank">Sorong</a>
+      <a href="https://docs.google.com/spreadsheets/d/1N60qiDJ3PUyT2p9RUaLEQQ_m-5joi3pHdk1X2EBbUP4/edit?gid=1130676385#gid=1130676385" target="_blank">Abepura</a>
+      <a href="https://docs.google.com/spreadsheets/d/1CBoHmOMbustHZAJAtw4fjUh8FfJ3FANNoSHa6l8KO48/edit?usp=drive_link" target="_blank">Palu</a>
     </div>
+  </div>
+</div>
 
-    <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1Fg0O3BoMSiEPxgwHzZ9Cl1VkIwJYXr30wYDxRGCThXI/edit?gid=1756284052#gid=1756284052')">
-        Selasa - Pending GR HCI
-    </div>
+<script>
+  function toggleDropdown(id) {
+    const content = document.getElementById(id);
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+</script>
 
-    <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1RWUe15aa2r7ly5Ya9CgJj2EgvuItsmTYDLaR49Gbuwg/edit?gid=1154078809#gid=1154078809')">
-        Rabu - Petty Cash 2025
-    </div>
-
-    <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1LF651oqEf8ty3jtI2961j-Lbu6yjukZ7LiQs9yE-Fq0/edit?gid=895752592#gid=895752592')">
-        Jumat - Weekly Report
-    </div>
-
-    <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1jBROfXuGRjcsmwX1unWU5Ym3LHByCPZk1stgDe7ztHs/edit?gid=843893060#gid=843893060')">
-        Minggu - Report Occupancy
-    </div>
-
-    <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1BVCs0YT9rsJRC2OGaUTmN4P0Exr8M_rF3mMQVgD-PA4/edit?gid=225676952#gid=225676952')">
-        Monthly - Report Evaluasi
-    </div>
-
-    <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1nlxKi2wptF22xitTsL4KfJriKbMTcbqme2flyj-RpyA/edit?gid=276662958#gid=276662958')">
-        Report Daily - Delivery Customer
-    </div>
-
-    <!-- Dropdown Card -->
-    <div class="card expandable" onclick="toggleDropdown(this)">
-        Report Armada by Monitoring LC
-        <div class="dropdown">
-            <a href="https://docs.google.com/spreadsheets/d/1pBdgD1KOdBNk73Tkl8NjXD_u4qijEwP29x5AJCAKcpU/edit?gid=1130676385#gid=1130676385" target="_blank">Summary Analyst</a>
-            <a href="https://docs.google.com/spreadsheets/d/1Nj1PBjen8i_h78pU5_TuobswUU2GpgIuaXo0GQqdmQw/edit?gid=1130676385#gid=1130676385" target="_blank">Banjarmasin</a>
-            <a href="https://docs.google.com/spreadsheets/d/1AjoxlOALeTMT_8ilG82dkrJ3fWYwPiqy6pFV9xZIEyg/edit?gid=1130676385#gid=1130676385" target="_blank">Batam</a>
-            <a href="https://docs.google.com/spreadsheets/d/1h6VSb0230dvxaRdpIDugLih-EUdQV2OuiwU9U2pCocw/edit?gid=1130676385#gid=1130676385" target="_blank">Nagoya</a>
-            <a href="https://docs.google.com/spreadsheets/d/1PDTpu5YLNX_59AkefbrWsrbGx5SPrQ1LMwg2PvkaCXA/edit?gid=1130676385#gid=1130676385" target="_blank">Samarinda</a>
-            <a href="https://docs.google.com/spreadsheets/d/1Bsg5Isl6V5Eub4dFRoqh2EzLueoBCfL-ntDsNuZ2FO0/edit?gid=1130676385#gid=1130676385" target="_blank">Manado</a>
-            <a href="https://docs.google.com/spreadsheets/d/1VxHmgmaEeEiAIAHx3KtEIsmdAvfXbT1fDUaV1g-d2MU/edit?gid=1130676385#gid=1130676385" target="_blank">Maluku</a>
-            <a href="https://docs.google.com/spreadsheets/d/15eyksWat5T1GGVZRLiI66OG_axwSq66ncOuLiESF5wM/edit?gid=1130676385#gid=1130676385" target="_blank">Kendari</a>
-            <a href="https://docs.google.com/spreadsheets/d/14ayl_Aiu1-au-HQoap6XqUNMY_5hBlsWbdgxAaf33f0/edit?usp=drive_link" target="_blank">Pangkal Pinang</a>
-            <a href="https://docs.google.com/spreadsheets/d/1tFvun3uUDPoZ_J9RireCYY5-galThSMsBW3SMB98MHE/edit?usp=drive_link" target="_blank">Pontianak</a>
-            <a href="https://docs.google.com/spreadsheets/d/1-I84eh9PK5Ir1p1jxeIhrVe470Cgm1Em1bZs0C838fo/edit?gid=1130676385#gid=1130676385" target="_blank">Ternate</a>
-            <a href="https://docs.google.com/spreadsheets/d/1gJZZfsLVa0Gzn_7pgaiz9Gjf3XlB8fWqFYR0WInA_Fo/edit?gid=1130676385#gid=1130676385" target="_blank">Tarakan</a>
-            <a href="https://docs.google.com/spreadsheets/d/1VSHabznwao8SHjrazvKZv_M4WILRdwQUn2rbe-J1VnI/edit?gid=1130676385#gid=1130676385" target="_blank">Sorong</a>
-            <a href="https://docs.google.com/spreadsheets/d/1N60qiDJ3PUyT2p9RUaLEQQ_m-5joi3pHdk1X2EBbUP4/edit?gid=1130676385#gid=1130676385" target="_blank">Abepura</a>
-            <a href="https://docs.google.com/spreadsheets/d/1CBoHmOMbustHZAJAtw4fjUh8FfJ3FANNoSHa6l8KO48/edit?usp=drive_link" target="_blank">Palu</a>
-        </div>
-    </div>
-
-    <script>
-        function toggleDropdown(element) {
-            element.classList.toggle("active");
-        }
-    </script>
 </body>
 </html>
