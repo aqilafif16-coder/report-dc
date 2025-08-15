@@ -1,50 +1,56 @@
-/* Style untuk body */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: linear-gradient(to bottom, #ffffff, #e6f0ff);
     margin: 0;
+    padding: 20px;
 }
 
-/* Judul halaman */
 h1 {
     text-align: center;
+    margin-bottom: 20px;
     color: #004a99;
-    margin-bottom: 30px;
 }
 
-/* Tabel */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+.card {
+    background: rgba(240, 240, 240, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
 }
 
-th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
 }
 
-th {
-    background: #004a99;
-    color: white;
-    text-align: left;
+/* Dropdown Style */
+.expandable .dropdown {
+    display: none;
+    margin-top: 10px;
+    padding-left: 10px;
+    flex-direction: column;
 }
 
-tr:hover {
-    background-color: #f2f8ff;
+.expandable.active .dropdown {
+    display: flex;
 }
 
-/* Link */
-a {
-    color: #007bff;
+.dropdown a {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 8px;
     text-decoration: none;
-    font-weight: bold;
+    color: #004a99;
+    font-weight: 500;
+    transition: background 0.2s;
 }
 
-a:hover {
-    text-decoration: underline;
+.dropdown a:hover {
+    background: rgba(255, 255, 255, 0.85);
 }
