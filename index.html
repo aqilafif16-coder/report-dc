@@ -36,10 +36,13 @@
             transform: translateY(-2px);
         }
 
+        /* Dropdown animasi slide */
         .dropdown-content {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
             margin-top: 10px;
             padding-left: 10px;
+            transition: max-height 0.4s ease;
         }
 
         .dropdown-content a {
@@ -54,6 +57,10 @@
             text-decoration: underline;
         }
 
+        .dropdown-content.open {
+            max-height: 1000px; /* cukup besar untuk semua link */
+        }
+
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -62,11 +69,11 @@
 </head>
 <body>
 
-<h1>📊 Daftar Laporan</h1>
+<h1>📊 Link All Report RDC SDC</h1>
 
-<!-- Report Armada with dropdown -->
+<!-- Armada LC -->
 <div class="card" onclick="toggleDropdown('armada')">
-    Report Armada by Monitoring LC
+    Daily - Report Armada by Monitoring LC 
     <div id="armada" class="dropdown-content">
         <a href="https://docs.google.com/spreadsheets/d/1pBdgD1KOdBNk73Tkl8NjXD_u4qijEwP29x5AJCAKcpU/edit?gid=1130676385#gid=1130676385">Summary Analyst</a>
         <a href="https://docs.google.com/spreadsheets/d/1Nj1PBjen8i_h78pU5_TuobswUU2GpgIuaXo0GQqdmQw/edit?gid=1130676385#gid=1130676385">Banjarmasin</a>
@@ -106,13 +113,13 @@
     Monthly - Report Evaluasi
 </div>
 <div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1nlxKi2wptF22xitTsL4KfJriKbMTcbqme2flyj-RpyA/edit?gid=276662958#gid=276662958','_blank')">
-    Report Daily - Delivery customer
+    Daily - Delivery customer
 </div>
 
 <script>
     function toggleDropdown(id) {
         const dropdown = document.getElementById(id);
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        dropdown.classList.toggle("open");
     }
 </script>
 
