@@ -1,146 +1,148 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>📊 Dashboard Report RDC & SDC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: rgba(44,62,80,0.9);
-      margin: 0;
-      padding: 20px;
-      color: white;
-    }
-    h1 {
-      text-align: center;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Report DC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: rgba(44, 62, 80, 0.9);
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
 
-    /* kartu - bisa dipakai pada <div> atau <a> */
-    .card {
-      display: block; /* penting agar <a class="card"> jadi block */
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 15px;
-      transition: transform 0.2s ease, background 0.3s ease;
-      cursor: pointer;
-      animation: fadeInUp 0.5s ease forwards;
-      color: inherit;
-      text-decoration: none; /* agar <a> tidak bergaris */
-    }
-    .card:hover {
-      background: rgba(255,255,255,0.15);
-      transform: translateY(-2px);
-    }
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-    .dropdown-content {
-      max-height: 0;
-      overflow: hidden;
-      margin-top: 10px;
-      padding-left: 10px;
-      transition: max-height 0.4s ease;
-    }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 15px;
+            transition: transform 0.2s ease, background 0.3s ease;
+            cursor: pointer;
+            animation: fadeInUp 0.5s ease forwards;
+        }
 
-    .dropdown-content a {
-      display: block;
-      color: white;
-      padding: 6px 0;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .dropdown-content a:hover {
-      text-decoration: underline;
-    }
+        .card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
 
-    .dropdown-content.open {
-      max-height: 1000px;
-    }
+        /* Dropdown animasi slide */
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            padding-left: 10px;
+            transition: max-height 0.4s ease;
+        }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        .dropdown-content a {
+            display: block;
+            color: white;
+            padding: 6px 0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dropdown-content a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-content.open {
+            max-height: 1000px; /* cukup besar untuk semua link */
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
-  <h1>📊 Link All Report RDC SDC</h1>
+<h1>📊 Link All Report RDC SDC</h1>
 
-  <!-- Dropdown card (tetap div) -->
-  <div class="card dropdown" role="button" tabindex="0" aria-expanded="false" data-target="armada">
-    Daily - Report Armada by Monitoring LC
+<!-- Armada LC -->
+<div class="card" onclick="toggleDropdown('armada')">
+    Daily - Report Armada by Monitoring LC 
     <div id="armada" class="dropdown-content">
-      <a href="https://docs.google.com/spreadsheets/d/1pBdgD1KOdBNk73Tkl8NjXD_u4qijEwP29x5AJCAKcpU/edit?gid=1130676385">Summary Analyst</a>
-      <a href="https://docs.google.com/spreadsheets/d/1Nj1PBjen8i_h78pU5_TuobswUU2GpgIuaXo0GQqdmQw/edit?gid=1130676385">Banjarmasin</a>
-      <a href="https://docs.google.com/spreadsheets/d/1AjoxlOALeTMT_8ilG82dkrJ3fWYwPiqy6pFV9xZIEyg/edit?gid=1130676385">Batam</a>
-      <a href="https://docs.google.com/spreadsheets/d/1h6VSb0230dvxaRdpIDugLih-EUdQV2OuiwU9U2pCocw/edit?gid=1130676385">Nagoya</a>
-      <!-- tambahkan link lainnya di sini -->
+        <a href="https://docs.google.com/spreadsheets/d/1pBdgD1KOdBNk73Tkl8NjXD_u4qijEwP29x5AJCAKcpU/edit?gid=1130676385#gid=1130676385">Summary Analyst</a>
+        <a href="https://docs.google.com/spreadsheets/d/1Nj1PBjen8i_h78pU5_TuobswUU2GpgIuaXo0GQqdmQw/edit?gid=1130676385#gid=1130676385">Banjarmasin</a>
+        <a href="https://docs.google.com/spreadsheets/d/1AjoxlOALeTMT_8ilG82dkrJ3fWYwPiqy6pFV9xZIEyg/edit?gid=1130676385#gid=1130676385">Batam</a>
+        <a href="https://docs.google.com/spreadsheets/d/1h6VSb0230dvxaRdpIDugLih-EUdQV2OuiwU9U2pCocw/edit?gid=1130676385#gid=1130676385">Nagoya</a>
+        <a href="https://docs.google.com/spreadsheets/d/1PDTpu5YLNX_59AkefbrWsrbGx5SPrQ1LMwg2PvkaCXA/edit?gid=1130676385#gid=1130676385">Samarinda</a>
+        <a href="https://docs.google.com/spreadsheets/d/1Bsg5Isl6V5Eub4dFRoqh2EzLueoBCfL-ntDsNuZ2FO0/edit?gid=1130676385#gid=1130676385">Manado</a>
+        <a href="https://docs.google.com/spreadsheets/d/1VxHmgmaEeEiAIAHx3KtEIsmdAvfXbT1fDUaV1g-d2MU/edit?gid=1130676385#gid=1130676385">Maluku</a>
+        <a href="https://docs.google.com/spreadsheets/d/15eyksWat5T1GGVZRLiI66OG_axwSq66ncOuLiESF5wM/edit?gid=1130676385#gid=1130676385">Kendari</a>
+        <a href="https://docs.google.com/spreadsheets/d/14ayl_Aiu1-au-HQoap6XqUNMY_5hBlsWbdgxAaf33f0/edit?usp=drive_link">Pangkal Pinang</a>
+        <a href="https://docs.google.com/spreadsheets/d/1tFvun3uUDPoZ_J9RireCYY5-galThSMsBW3SMB98MHE/edit?usp=drive_link">Pontianak</a>
+        <a href="https://docs.google.com/spreadsheets/d/1-I84eh9PK5Ir1p1jxeIhrVe470Cgm1Em1bZs0C838fo/edit?gid=1130676385#gid=1130676385">Ternate</a>
+        <a href="https://docs.google.com/spreadsheets/d/1gJZZfsLVa0Gzn_7pgaiz9Gjf3XlB8fWqFYR0WInA_Fo/edit?gid=1130676385#gid=1130676385">Tarakan</a>
+        <a href="https://docs.google.com/spreadsheets/d/1VSHabznwao8SHjrazvKZv_M4WILRdwQUn2rbe-J1VnI/edit?gid=1130676385#gid=1130676385">Sorong</a>
+        <a href="https://docs.google.com/spreadsheets/d/1N60qiDJ3PUyT2p9RUaLEQQ_m-5joi3pHdk1X2EBbUP4/edit?gid=1130676385#gid=1130676385">Abepura</a>
+        <a href="https://docs.google.com/spreadsheets/d/1CBoHmOMbustHZAJAtw4fjUh8FfJ3FANNoSHa6l8KO48/edit?usp=drive_link">Palu</a>
     </div>
-  </div>
+</div>
 
-  <!-- Card berupa <a> sehingga URL tetap ada dan bisa di-copy/right-click -->
-  <a class="card card-link" href="https://docs.google.com/spreadsheets/d/1vLJ1N3k1XqmGKVysf-rq5_72M6cTHlGtjDeGUAkohXM/edit?gid=0">Senin - Used Budget ADF</a>
+<!-- Other reports -->
+<div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1vLJ1N3k1XqmGKVysf-rq5_72M6cTHlGtjDeGUAkohXM/edit?gid=0#gid=0','_blank')">
+    Senin - Used Budget ADF
+</div>
+<div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1Fg0O3BoMSiEPxgwHzZ9Cl1VkIwJYXr30wYDxRGCThXI/edit?gid=1756284052#gid=1756284052','_blank')">
+    Selasa - Pending GR HCI
+</div>
 
-  <a class="card card-link" href="https://docs.google.com/spreadsheets/d/1Fg0O3BoMSiEPxgwHzZ9Cl1VkIwJYXr30wYDxRGCThXI/edit?gid=1756284052">Selasa - Pending GR HCI</a>
-
-  <!-- Petty Cash dropdown -->
-  <div class="card dropdown" role="button" tabindex="0" aria-expanded="false" data-target="pettycash">
+<!-- Petty Cash (dropdown) -->
+<div class="card" onclick="toggleDropdown('pettycash')">
     Rabu - Petty Cash 2025
     <div id="pettycash" class="dropdown-content">
-      <a href="https://docs.google.com/spreadsheets/d/1cAn0useHDRqF4q1QM5MFL-DxYTsNLPZimUhVeiHxmvg/edit?gid=0">April</a>
-      <a href="https://docs.google.com/spreadsheets/d/1zgeN7bYcQxynaLQkXTM8FqvPBQMLn7VG5H8txi0Lp3k/edit?gid=0">Mei</a>
-      <!-- dst... -->
+        <a href="https://docs.google.com/spreadsheets/d/1cAn0useHDRqF4q1QM5MFL-DxYTsNLPZimUhVeiHxmvg/edit?gid=0#gid=0">April</a>
+        <a href="https://docs.google.com/spreadsheets/d/1zgeN7bYcQxynaLQkXTM8FqvPBQMLn7VG5H8txi0Lp3k/edit?gid=0#gid=0">Mei</a>
+        <a href="https://docs.google.com/spreadsheets/d/1LbPFzVw2xqZZ-oknzG7zOPtn7h1bzY7EkB6NApwmAek/edit?gid=0#gid=0">Juni</a>
+        <a href="https://docs.google.com/spreadsheets/d/1RWUe15aa2r7ly5Ya9CgJj2EgvuItsmTYDLaR49Gbuwg/edit?gid=0#gid=0">Juli</a>
+        <a href="https://docs.google.com/spreadsheets/d/1DxU8r75GlvyNAq6vtIXaORKWXqf-cclrgvCU_4evwBM/edit?gid=0#gid=0">Agustus</a>
+        <a href="https://docs.google.com/spreadsheets/d/1dqtJIjULP1oN7NEYmbNCxiPcCr2QP5LS8VyTJLOxqVY/edit?usp=drive_link">September</a>
+        <a href="https://docs.google.com/spreadsheets/d/1T_pTac89LGcTpDxqeFzT1zIwSlPKJVtoHq5gyLAVaJc/edit?usp=drive_link">Oktober</a>
+        <a href="https://docs.google.com/spreadsheets/d/1HiM7S2tGiJsd9Vkw59GXM0Yej8pSzwM5gnqVYn7TKyA/edit?usp=drive_link">November</a>
+        <a href="https://docs.google.com/spreadsheets/d/1IlhHTAqO9ft67_w7XYljp5fiEHNi8RPYl-ophwV-4PY/edit?usp=drive_link">Desember</a>
     </div>
-  </div>
+</div>
 
-  <a class="card card-link" href="https://docs.google.com/spreadsheets/d/1LF651oqEf8ty3jtI2961j-Lbu6yjukZ7LiQs9yE-Fq0/edit?gid=895752592">Jumat - Weekly Report</a>
-
-  <a class="card card-link" href="https://docs.google.com/spreadsheets/d/1jBROfXuGRjcsmwX1unWU5Ym3LHByCPZk1stgDe7ztHs/edit?gid=843893060">Minggu - Report Occupancy</a>
-
-  <a class="card card-link" href="https://docs.google.com/spreadsheets/d/1BVCs0YT9rsJRC2OGaUTmN4P0Exr8M_rF3mMQVgD-PA4/edit?gid=225676952">Monthly - Report Evaluasi</a>
-
-  <a class="card card-link" href="https://docs.google.com/spreadsheets/d/1nlxKi2wptF22xitTsL4KfJriKbMTcbqme2flyj-RpyA/edit?gid=276662958">Daily - Delivery customer</a>
+<div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1LF651oqEf8ty3jtI2961j-Lbu6yjukZ7LiQs9yE-Fq0/edit?gid=895752592#gid=895752592','_blank')">
+    Jumat - Weekly Report
+</div>
+<div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1jBROfXuGRjcsmwX1unWU5Ym3LHByCPZk1stgDe7ztHs/edit?gid=843893060#gid=843893060','_blank')">
+    Minggu - Report Occupancy
+</div>
+<div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1BVCs0YT9rsJRC2OGaUTmN4P0Exr8M_rF3mMQVgD-PA4/edit?gid=225676952#gid=225676952','_blank')">
+    Monthly - Report Evaluasi
+</div>
+<div class="card" onclick="window.open('https://docs.google.com/spreadsheets/d/1nlxKi2wptF22xitTsL4KfJriKbMTcbqme2flyj-RpyA/edit?gid=276662958#gid=276662958','_blank')">
+    Daily - Delivery customer
+</div>
 
 <script>
-  // Toggle untuk dropdown card (klik & keyboard)
-  document.querySelectorAll('.card.dropdown').forEach(card => {
-    const targetId = card.dataset.target;
-    const dropdown = document.getElementById(targetId);
-
-    function toggle() {
-      dropdown.classList.toggle('open');
-      const expanded = dropdown.classList.contains('open');
-      card.setAttribute('aria-expanded', expanded);
+    function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        dropdown.classList.toggle("open");
     }
-
-    card.addEventListener('click', function(e) {
-      // Jika pengguna klik langsung pada link di dalam (anchor), anchor akan stopPropagation.
-      // Jadi di sini aman untuk toggle.
-      toggle();
-    });
-
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle();
-      }
-    });
-  });
-
-  // Pastikan semua link di dropdown & card-link buka new tab dan tidak memicu toggle parent.
-  document.querySelectorAll('.dropdown-content a, .card.card-link').forEach(a => {
-    a.setAttribute('target', '_blank');
-    a.setAttribute('rel', 'noopener noreferrer');
-
-    // kalau diklik, jangan biarkan event naik (soalnya parent .card dropdown juga punya click)
-    a.addEventListener('click', function(e) {
-      e.stopPropagation();
-      // biarkan default browser membuka link ke _blank
+  <script>
+  // 1. Card biasa → buka tab baru (sudah ada di HTML via onclick, aman)
+  // 2. Card dropdown → tetap expand/collapse (pakai toggleDropdown, aman)
+  // 3. Link dalam dropdown → selalu buka tab baru + tidak trigger toggle
+  document.querySelectorAll(".dropdown-content a").forEach(link => {
+    link.setAttribute("target", "_blank");   // buka tab baru
+    link.addEventListener("click", e => {
+      e.stopPropagation(); // cegah trigger toggleDropdown saat klik link
     });
   });
 </script>
